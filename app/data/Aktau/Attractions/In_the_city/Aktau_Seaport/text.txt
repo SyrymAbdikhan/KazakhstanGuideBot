@@ -1,5 +1,5 @@
 Attraction name: Aktau Seaport
 
 📍 Address: Aktau, 13th microdistrict 55, City Administration
-📎 Google maps:  https://goo.gl/maps/DZYvsorx3ySrC4Va9
+📎 Google maps: https://goo.gl/maps/DZYvsorx3ySrC4Va9
 📎 2.Gis: https://go.2gis.com/v859c0
