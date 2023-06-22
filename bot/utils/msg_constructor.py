@@ -1,17 +1,16 @@
 
+
 import os
 
-from app.helper.buttons import inlineButtons
-from app.helper.scraper import get_subdirs, index_to_path
+from bot.utils.buttons import inlineButtons
+from bot.utils.funcs import get_subdirs, index_to_path
 
-from aiogram import types
 from aiogram.utils.callback_data import CallbackData
 
 path_cb = CallbackData('path', 'folder', 'level')
 
 
 def get_message_data(path, level, n=2):
-
     level = int(level)
     spath = path.split('/')
     button_texts = get_subdirs(spath[:level+1], fromindex=1)

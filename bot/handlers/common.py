@@ -1,7 +1,7 @@
 
 import typing
 
-from app.helper.loader import get_message_data, path_cb
+from bot.utils.msg_constructor import get_message_data, path_cb
 
 from aiogram import Dispatcher, types
 from aiogram.utils import exceptions
@@ -34,10 +34,7 @@ async def query_level_4(query: types.CallbackQuery, callback_data: typing.Dict[s
     if 'photo' in query.message:
         try:
             await query.message.edit_media(
-                types.InputMediaPhoto(
-                    media=open(img_path, 'rb'),
-                    caption=text
-                ),
+                types.InputMediaPhoto(media=open(img_path, 'rb'), caption=text),
                 reply_markup=markup
             )
         except exceptions.MessageNotModified:
@@ -51,7 +48,7 @@ async def query_level_4(query: types.CallbackQuery, callback_data: typing.Dict[s
         )
 
 
-def register_handlers_main(dp: Dispatcher):
+def register_handlers(dp: Dispatcher):
     dp.register_message_handler(cmd_menu, commands="start")
     dp.register_message_handler(cmd_menu, commands="menu")
     dp.register_callback_query_handler(query_levels_0_to_3, path_cb.filter(level=['0', '1', '2', '3']))
