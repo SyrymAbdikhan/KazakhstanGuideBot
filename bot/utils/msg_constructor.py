@@ -20,7 +20,7 @@ def get_message_data(path, level, n=2):
     markup = inlineButtons(button_info, '/'.join(spath[:level+1]), path_cb, level, n)
 
     dir_files = get_subdirs(spath, fromindex=1)
-    dir_path = os.path.join('app', *index_to_path(spath))
+    dir_path = os.path.join('bot', *index_to_path(spath))
 
     if level == 4 and len(dir_files) > 1:
         dir_path = os.path.join(dir_path, '01')
