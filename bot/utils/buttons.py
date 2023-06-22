@@ -1,8 +1,6 @@
 
 import os
 
-from app.helper.scraper import get_subdirs
-
 from aiogram import types
 
 
@@ -10,7 +8,8 @@ def inlineButtons(button_info, current_path, cb, level, n=2):
     markup = types.InlineKeyboardMarkup()
 
     nlevel = level
-    if level < 4: nlevel += 1
+    if level < 4:
+        nlevel += 1
     
     for i in range(0, len(button_info), n):
         row_info = button_info[i:i+n]
@@ -20,10 +19,7 @@ def inlineButtons(button_info, current_path, cb, level, n=2):
             buttons.append(
                 types.InlineKeyboardButton(
                     text.replace('_', ' '),
-                    callback_data=cb.new(
-                        folder=path,
-                        level=nlevel
-                    )
+                    callback_data=cb.new( folder=path, level=nlevel)
                 )
             )
         markup.row(*buttons)
@@ -33,9 +29,7 @@ def inlineButtons(button_info, current_path, cb, level, n=2):
             types.InlineKeyboardButton(
                 'Back',
                 callback_data=cb.new(
-                    folder=os.path.join(
-                        *current_path.split('/')[:-1]
-                    ),
+                    folder=os.path.join(*current_path.split('/')[:-1]),
                     level=level-1
                 )
             )

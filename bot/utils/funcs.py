@@ -40,4 +40,4 @@ def get_subdirs(arr, fromindex=0):
     return cdata.copy()
 
 
-data = get_data('./app/data')
+data = get_data('./bot/data')
