@@ -1,7 +1,9 @@
 # Kazakhstan Guide Bot
 
-<img src="https://i.imgur.com/rHD12Bw.png" width="300px">
-<img src="https://i.imgur.com/fAgQ4gJ.png" width="300px">
+<div>
+    <img src="https://i.imgur.com/rHD12Bw.png" width="300px">
+    <img src="https://i.imgur.com/fAgQ4gJ.png" width="300px">
+</div>
 
 ![python](https://img.shields.io/badge/python-v3.11.2-blue.svg?logo=python&logoColor=yellow) ![aiogram](https://img.shields.io/badge/aiogram-v2.25.1-blue.svg?logo=telegram) ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
