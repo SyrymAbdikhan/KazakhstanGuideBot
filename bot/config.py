@@ -36,6 +36,6 @@ def load_config():
             host=getenv('WEBHOOK_HOST'),
             path=getenv('WEBHOOK_PATH'),
             app_host=getenv('APP_HOST'),
-            app_port=getenv('APP_PORT')
+            app_port=int(getenv('APP_PORT'))
         )
     )
