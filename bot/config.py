@@ -12,13 +12,13 @@ class Bot:
 class Webhook:
     host: str
     path: str
-    url: str
 
     app_host: str
     app_port: int
 
-    def __post_init__(self):
-        self.url = self.host + self.path
+    @property
+    def url(self):
+        return self.host + self.path
 
 
 @dataclass
@@ -34,8 +34,7 @@ def load_config():
         ),
         webhook=Webhook(
             host=getenv('WEBHOOK_HOST'),
-            path=f"/bot/{getenv('BOT_TOKEN')}",
-            url='',
+            path=getenv('WEBHOOK_PATH'),
             app_host=getenv('APP_HOST'),
             app_port=getenv('APP_PORT')
         )
